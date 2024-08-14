@@ -1,17 +1,84 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { HelmetProvider } from 'react-helmet-async';
+import {
+    // BrowserRouter,
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import Home from './components/Home';
+import Vacancies from './components/Vacancies';
+import Contacts from './components/contacts';
+import ErrorPage from './components/ErrorPage';
+import Video from './components/Video';
+import Galery from './components/Galery';
+import Blog from './components/Blog';
+import AdminDB from './components/AdminDB';
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Home/>,
+        errorElement: <ErrorPage/>
+    },
+    {
+        path: "/contacts",
+        element: <Contacts/>,
+        errorElement: <ErrorPage/>
+      },
+    {
+        path: "/vacancies",
+        element: <Vacancies/>,
+        errorElement: <ErrorPage/>
+      },
+    {
+        path: "/video",
+        element: <Video/>,
+        errorElement: <ErrorPage/>
+      },
+    {
+        path: "/galery",
+        element: <Galery/>,
+        errorElement: <ErrorPage/>
+      },
+    {
+        path: "/blog",
+        element: <Blog/>,
+        errorElement: <ErrorPage/>
+      },
+      {
+        path: "/404",
+        element: <ErrorPage/>
+        // errorElement: <ErrorPage/>
+    },
+      {
+        path: "/admin",
+        element: <AdminDB/>,
+        errorElement: <ErrorPage/>
+    },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <HelmetProvider>
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>
+  </HelmetProvider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { BrowserRouter } from 'react-router-dom'
+// import './styles/styles.scss';
+// import App from './App';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );

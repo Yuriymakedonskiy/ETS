@@ -1,0 +1,132 @@
+#logo {
+    text-align: center;
+}
+#logo img:nth-child(1) {
+    width: 165px;
+    z-index: 1000;
+    margin-top: 15px;
+}
+#logo img:nth-child(2) {
+    width: 190px;
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+  @media (max-width: 767px) {
+    #logo img {
+      width: 90px;
+    }
+  }
+  
+
+  .liner_center{
+    color: #30f;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+    .liner_center:before {
+    
+        top: -20px;
+      content: '';
+    flex-grow: 2;
+    font-size: 30px;
+
+    font-style: italic; 
+    height: 2px;
+    background: #30f;
+    min-width: 50px;
+    margin: auto;
+    /* float: left; */
+  }
+  
+  .liner_center:after {
+    content: '';
+    flex-grow: 2;
+    height: 2px;
+    background: #30f;
+    min-width: 20px;
+    /* margin: 20px; */
+  
+    /* float: left; */
+  }
+  
+  .liner_center::before {
+    margin-top: 40px;
+    margin-right: 20px;
+  }
+  
+  .liner_center::after {
+    margin-top: 40px;
+  
+    margin-left: 20px;
+  }
+  
+
+  .visibleAnimate {
+    // opacity: 0;
+    transition: all 3.5s ease;
+
+  animation: fade 1.5s ease forwards;
+  animation-delay: .2s;
+  -webkit-animation: fade 1.5s ease forwards;
+  -webkit-animation-delay: .2s;
+  -moz-animation: fade 1.5s ease forwards;
+  -moz-animation-delay: .2s;
+  }
+  
+.popup__login {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  height: 100%;
+  
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: #1E2345;
+}
+
+
+.popup__container__login img {
+  transform: translate3d(0, 30%, 0);
+}
+
+.input_background__none {
+  border: 1px solid #c6ddfe;
+  color: rgb(30, 35, 69,0.7);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.25rem;
+  letter-spacing: -.03em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  text-decoration: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 0.75rem;
+  height: 2.8125rem;
+  margin: 10px;
+  padding: 0 1.25rem 0.0625rem;
+  // display: inline-flex;
+  // align-items: center;
+  // justify-content: left;
+  transition: .15s ease-in-out;
+  // position: relative;
+}
+
+.input_background__none:hover {
+  transition: .15s ease-in-out;
+  background-color: #FCF5F3;
+  color: #1E2345;
+  box-shadow: 0 0.125rem 0.25rem #1E2345;
+
+  border: 1px solid #1E2345;
+}
+
+
+.etsText{
+  margin-top: 80px;
+}

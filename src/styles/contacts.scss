@@ -1,0 +1,148 @@
+.cart {
+    display: none;
+}
+
+.pageTitle {
+    color: #000;
+    font-weight: 700;
+    font-size: 4.6875rem;
+    /* margin-left: 15px; */
+    margin-top: 80px;
+    line-height: 4.875rem;
+    letter-spacing: -.05em;
+    margin-bottom: 0.225rem;
+    /* margin-left: 0px; */
+    position: relative;
+    z-index: 1;
+}
+
+.page__text {
+    /* margin-left: 15px; */
+}
+
+.Yandex__cart {
+    opacity: 1;
+    border: 7px solid #fff;
+    border-radius: 60px;
+    z-index: -999;
+}
+
+@media (min-width: 991px) {
+
+    .plast {
+        width: 800px;
+    }
+}
+
+@media (min-width: 1350px) {
+
+    .plast__two {
+        width: 1350px;
+    }
+
+    .plast__three {
+        width: 850px;
+    }
+
+}
+
+.plast__block {
+    margin-top: 50px;
+}
+
+.telegramId {
+    cursor: pointer;
+}
+
+.telegramId:hover {
+    transition: .30s ease-in-out;
+    color: #30f;
+    /* font-size: 1.1925rem; */
+}
+
+.contacts__item-text_link {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
+    letter-spacing: -.03em;
+    color: #30f;
+    border-bottom: 1px solid rgba(51, 0, 255, .3);
+    transition: border-color .15s ease-in-out;
+}
+
+.contacts__item-text_link:hover {
+    color: #30f;
+
+    border-bottom: 1px solid rgba(51, 0, 255, .0);
+}
+
+.pageText {
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+    letter-spacing: -.0em;
+    margin-bottom: 3.275rem;
+    position: relative;
+    z-index: 1;
+    margin-left: 5px;
+    /* margin-left: 2rem; */
+}
+
+
+@media (max-width: 767px) {
+    .pageTitle {
+        font-size: 3.25rem;
+        line-height: 3.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .pageText {
+        font-weight: 600;
+        /* line-height: 2rem; */
+        letter-spacing: -.04em;
+        line-height: 2.25rem;
+        font-size: 1.75rem;
+        line-height: 130%;
+    }
+
+}
+.vacancy-card__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: -.035em;
+    margin-bottom: 0.9375rem;
+    margin-top: 3.9375rem;
+    font-weight: 700;
+}
+
+.vacancy-card__text_description {
+    color: rgba(0, 0, 0, .6);
+    /* margin-bottom: 1.5625rem; */
+}
+
+.vacancy-card__text {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    letter-spacing: -.04em;
+}
+.cart__link {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    letter-spacing: -.04em;
+    cursor: pointer;
+    color: rgba(0, 0, 0, .9);
+    border-bottom: 1px dashed rgba(0, 0, 0, .3);
+    transition: border-color .15s ease-in-out;
+}
+
+.cart__link:hover {
+    border-bottom: 1px dashed rgba(0, 0, 0, .0);
+
+}
+@media (max-width: 767px) {
+    .Yandex__cart {
+        border-radius: 25px;
+    }
+}

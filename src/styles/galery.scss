@@ -1,0 +1,59 @@
+.containerGalery {
+    font-size: 0;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .cardG {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 400px;
+    width: 600px;
+    /*
+    Each "card" is set to 600x400px because that is the size of  the image, adjust as needed. Make sure the overflow is set to hidden or else when the img scales it will clip with the other images.
+    */
+  }
+
+  .img-container {
+    transition: transform .5s ease;
+  }
+
+  .img-container:hover {
+    transform: scale(1.3) ;
+    /*
+    Change the scale value as much as you want to change the amount of zoom on hover.
+    */
+  }
+
+  .cardG img {
+    opacity: .8;
+    transform: translate(0,0);
+    /*
+    Change the opacity value to change how "faded" you want the image to appear when it is not hovered.
+    */
+    transition: opacity .25s ease-in-out;
+  }
+
+  .cardG img:hover {
+    opacity: 1;
+  }
+  .depart__title {
+    text-align: center;
+    margin-top: 70px;
+}
+
+  @media (max-width: 600px) {
+  .depart__title {
+    text-align: left;
+    margin-top: 70px;
+}
+  .cardG {
+    height: auto;
+    width: 100%;
+    /*
+    Each "card" is set to 600x400px because that is the size of  the image, adjust as needed. Make sure the overflow is set to hidden or else when the img scales it will clip with the other images.
+    */
+  }
+}
