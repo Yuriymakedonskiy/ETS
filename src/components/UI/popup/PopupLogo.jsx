@@ -10,7 +10,7 @@ const PopupLogo = () => {
 
   
   return (
-    <div className="popup__logo visible">
+    <div className="popup__logo">
   <div className="popup__container__logo">
     <img
       src={PopLogo}
