@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 
 // Подключение к MongoDB Atlas
-const mongoURI = process.env.MONGODB_URI;
+const mongoURL = process.env.MONGODB_URL;
 
 if (!mongoose.connections[0].readyState) {
-    mongoose.connect(mongoURI, {
+    mongoose.connect(mongoURL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });

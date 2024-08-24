@@ -21,25 +21,25 @@ mongoose.connect(mongoURL, {
     .catch(err => console.error('Error connecting to MongoDB Atlas:', err));
 
 
-// const vacancieSchema = new mongoose.Schema({
-//     title: String,
-//     workExperience: String,
-//     salary: String,
-//     requirements: String,
-//     responsibilities: String,
-//     conditions: String,
-// });
+const vacancieSchema = new mongoose.Schema({
+    title: String,
+    workExperience: String,
+    salary: String,
+    requirements: String,
+    responsibilities: String,
+    conditions: String,
+});
 
-// const Vacancies = mongoose.model('vacancies', vacancieSchema);
+const Vacancies = mongoose.model('vacancies', vacancieSchema);
 
-// app.get('/api/vacancies', async (req, res) => {
-//     try {
-//         const vacancies = await Vacancies.find();
-//         res.json(vacancies);
-//     } catch (err) {
-//         res.status(500).json({ message: err.message })
-//     }
-// });
+app.get('/api/vacancies', async (req, res) => {
+    try {
+        const vacancies = await Vacancies.find();
+        res.json(vacancies);
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+});
 
 const servicesSchema = new mongoose.Schema({
     _idSer: mongoose.Schema.Types.ObjectId,
