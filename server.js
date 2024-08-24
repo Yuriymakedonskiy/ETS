@@ -12,7 +12,7 @@ const secretKey = 'miminoKika1977';
 app.use(cors());
 app.use(express.json());
 
-const mongoURL = "mongodb+srv://urkabestyzhev:LOv7PTJ2OCFayGlL@etalontrans.2324u.mongodb.net/EtalonTrans?retryWrites=true&w=majority";
+const mongoURL = process.env.MONGO_URL;
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
