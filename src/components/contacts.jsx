@@ -1,15 +1,32 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import $ from 'jquery';
 import scss from '../styles/contacts.scss'
 import { Helmet } from 'react-helmet-async';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Contacts = () => {
   setTimeout(scrollBar, 10)
   function scrollBar() {
       $('body').css('overflow-y', 'auto');
   }
+
+  const [pdfcart, setPdfcart] = useState([]);
+
+  useEffect(() => {
+    const fetchPdfcart = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/pdfcart');
+        setPdfcart(response.data)
+      } catch (error) {
+        console.error('Error fetching the pdfcart', error)
+      }
+    };
+    fetchPdfcart();
+  }, []);
+
   const cart__link = React.useCallback(() => {
       $('.cart').css('display', 'block');
   }, [])
@@ -96,15 +113,17 @@ style={{ marginTop: "-130px", marginBottom: 90 }}
         <span onClick={YandexCart} className="cart__link">{yandexCartText}</span>{" "}
       </span>
     </p>
-    <a
-      href="{{pdf_cart.file.url}}"
-      download=""
-      target="_blank"
+    {pdfcart.map((pdf, index) => (
+
+    <Link
+      to={`${pdf.file}`} target="_blank" download
+
       className="contacts__item-text contacts__item-text_link"
       style={{ textDecoration: "none" }}
     >
       Скачать реквизиты в PDF
-    </a>
+    </Link>
+    ))}
   </div>
   <div className="col-10 col-md-5 col-lg-4 offset-0">
     <a
