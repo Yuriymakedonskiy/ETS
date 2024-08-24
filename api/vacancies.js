@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 // Подключение к MongoDB Atlas
-const mongoURL = process.env.MONGODB_URL;
+const mongoURL = process.env.MONGODB_URI;
 
 if (!mongoose.connections[0].readyState) {
     mongoose.connect(mongoURL, {

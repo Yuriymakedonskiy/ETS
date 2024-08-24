@@ -12,7 +12,7 @@ const secretKey = 'miminoKika1977';
 app.use(cors());
 app.use(express.json());
 
-const mongoURL = process.env.MONGO_URL;
+const mongoURL = process.env.MONGO_URI;
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
