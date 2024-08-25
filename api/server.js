@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 const port = 5000;
-const secretKey = 'miminoKika1977';
+const secretKey = process.env.DATA_API_KEY;
 mongoose.set('strictQuery', true);
 app.use(cors());
 app.use(express.json());
