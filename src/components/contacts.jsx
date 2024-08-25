@@ -18,7 +18,7 @@ const Contacts = () => {
   useEffect(() => {
     const fetchPdfcart = async () => {
       try {
-        const response = await axios.get('https://etalontrans.vercel.app/api/pdfcart');
+        const response = await axios.get('/api/getPdfcart');
         setPdfcart(response.data)
       } catch (error) {
         console.error('Error fetching the pdfcart', error)
