@@ -21,7 +21,7 @@ const AdminDB = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/login', { username, password });
+      const response = await axios.post('https://etalontrans.vercel.app/api/login', { username, password });
       const { token } = response.data;
       console.log(response.data)
 

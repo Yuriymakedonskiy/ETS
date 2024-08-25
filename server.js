@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-// const mongoURL = "mongodb+srv://urkabestyzhev:LOv7PTJ2OCFayGlL@etalontrans.2324u.mongodb.net/?retryWrites=true&w=majority&appName=EtalonTrans";
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
 const port = 5000;
@@ -12,7 +13,8 @@ const secretKey = 'miminoKika1977';
 app.use(cors());
 app.use(express.json());
 
-const mongoURL = process.env.MONGO_URI;
+const mongoURL = process.env.MONGODB_URI;
+
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -138,6 +140,6 @@ app.post('/api/login', async (req, res) => {
 });
 
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-})
+// app.listen(port, () => {
+//     console.log(`Server is running on http://localhost:${port}`);
+// })
