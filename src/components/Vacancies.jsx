@@ -12,7 +12,7 @@ const Vacancies = () => {
   useEffect(() => {
     const fetchVacancies = async () => {
       try {
-        const response = await axios.get('/api/vacancies');
+        const response = await axios.get('/api/getVacancies');
         setVacancies(response.data)
       } catch (error) {
         console.error('Error fetching the vacancies', error)
