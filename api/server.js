@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const port = 5000;
 const secretKey = 'miminoKika1977';
-
+mongoose.set('strictQuery', true);
 app.use(cors());
 app.use(express.json());
 
@@ -140,8 +140,4 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-module.export = app;
-
-// app.listen(port, () => {
-//     console.log(`Server is running on http://localhost:${port}`);
-// })
+module.exports = app;
