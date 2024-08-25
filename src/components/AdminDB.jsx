@@ -21,7 +21,7 @@ const AdminDB = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://etalontrans.vercel.app/api/login', { username, password });
+      const response = await axios.post('/api/login', { username, password });
       const { token } = response.data;
       console.log(response.data)
 
@@ -36,8 +36,8 @@ const AdminDB = () => {
   };
 
   const openCompass = () => {
-    const mongoUri = encodeURIComponent('mongodb://localhost:27017/EtalonTrans');
-    const newWindow = window.open(`mongodb://localhost:27017/EtalonTrans`, '_blank');
+    const mongoUri = encodeURIComponent('mongodb+srv://vercel-admin-user-66cb7e3b06da0270f9fa6cf3:28zm0CHRS29H2ymz@etalontrans.2324u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+    const newWindow = window.open(`mongodb+srv://vercel-admin-user-66cb7e3b06da0270f9fa6cf3:28zm0CHRS29H2ymz@etalontrans.2324u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, '_blank');
     // Проверяем, что новое окно открыто
     if (newWindow) {
         // Закрываем окно через 5 секунд
