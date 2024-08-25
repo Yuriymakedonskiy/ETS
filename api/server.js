@@ -14,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 const mongoURL = process.env.MONGODB_URI;
+// console.log(mongoURL)
 
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
@@ -139,6 +140,7 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
+module.export = app;
 
 // app.listen(port, () => {
 //     console.log(`Server is running on http://localhost:${port}`);
