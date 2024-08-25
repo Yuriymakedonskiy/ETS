@@ -52,7 +52,7 @@ const Body = () => {
     React.useEffect(() => {
       const fetchServices = async () => {
         try {
-          const response = await axios.get('/api/getData');
+          const response = await axios.get('/api/getServices');
           setServices(response.data)
         } catch (error) {
           console.error('Error fetching the services', error)
