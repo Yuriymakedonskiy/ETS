@@ -21,7 +21,7 @@ const AdminDB = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/login', { username, password });
+      const response = await axios.post('/api/getUsers', { username, password });
       const { token } = response.data;
       console.log(response.data)
 
