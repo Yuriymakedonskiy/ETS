@@ -6,6 +6,7 @@ import scss from '../styles/contacts.scss'
 import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import PopupLogo from './UI/popup/PopupLogo'
 
 const Contacts = () => {
   setTimeout(scrollBar, 10)
@@ -152,6 +153,8 @@ style={{ marginTop: "-130px", marginBottom: 90 }}
 </div>
 
 <Footer/>
+<PopupLogo />
+      
     </>
   )
 }
