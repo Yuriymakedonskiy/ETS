@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import scss from '../styles/vacancies.scss'
 import axios from 'axios';
+import PopupLogo from './UI/popup/PopupLogo'
 import { Helmet } from 'react-helmet-async';
 
 const Vacancies = () => {
@@ -167,6 +168,7 @@ const Vacancies = () => {
       <br />
       <br />
       <Footer />
+      <PopupLogo />
     </>
   )
 }
