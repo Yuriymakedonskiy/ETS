@@ -60,6 +60,21 @@ const Body = () => {
       };
       fetchServices();
     }, []);
+    
+    const [vacancies, setVacancies] = useState([]);
+
+  React.useEffect(() => {
+    const fetchVacancies = async () => {
+      try {
+        const response = await axios.get('https://etalontrans.vercel.app/api/vacancies');
+        setVacancies(response.data)
+      } catch (error) {
+        console.error('Error fetching the vacancies', error)
+      }
+    };
+    fetchVacancies();
+  }, []);
+ 
   
 
     const numberCopyCall = React.useCallback(() => {
@@ -103,10 +118,11 @@ const Body = () => {
         <>
         
             <link href={scss} rel="stylesheet" type="text/css" />
-            <div className="container-fluid plast__two" style={{ marginTop: 100 }}>
+
+                     <div className="container-fluid plast__two" style={{ marginTop: 250 }}>
                 <div className="row">
-                    <div className="col-10 col-lg-10 offset-0 offset-lg-1">
-                        <h1 className="pageTitle pageTitle_main" style={{ marginBottom: 20 }}>
+                    <div className="col-10 offset-0 offset-lg-1">
+                        <h1 className="pageTitle pageTitle_main Strong" style={{ marginBottom: 20 }}>
                             Транспортная компания в ХМАО-Югре
                             <span style={{ color: "#30f" }}>.</span>
                         </h1>
@@ -1056,7 +1072,7 @@ const Body = () => {
                             className="hrefVacancies__background-blue_text-min "
                             style={{ fontSize: 22 }}
                         >
-                            Мы открыли заявки на 2 вакансий.  Посмотрите, может одна из них вас заинтересует
+                            Мы открыли заявки на {vacancies.length} вакансий.  Посмотрите, может одна из них вас заинтересует
                         </p>
                     </div>
                     <a href="/vacancies">
@@ -1088,7 +1104,7 @@ const Body = () => {
                     </div>
                 </h1>
                 <br />
-                <div className="container-fluid">
+                {/* <div className="container-fluid"> */}
                     <center>
                         <div
                             style={{ marginTop: 25, marginBottom: 20 }}
@@ -1101,19 +1117,8 @@ const Body = () => {
                             />
                         </div>
                     </center>
-                </div>
+                {/* </div> */}
                 <br />
-                <div className="container">
-                    {/* <span
-                        style={{ color: "#F1FAEE" }}
-                        className="vacancy-card__text pageText"
-                    >
-                        За годы развития ООО «ЭталонТрансСервис» удалось качественно расширить
-                        штат сотрудников и организовать необходимые отделы компании,
-                        обеспечивающие оказание первоклассных услуг
-                    </span> */}
-                    {/* <br /> */}
-                </div>
             </div>
             <div className="container-fluid plast__two" style={{ marginTop: 150 }}>
                 <div className="row">
