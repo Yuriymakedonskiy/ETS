@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../images/ets.svg'
+import logoWhite from '../images/ets_White.png'
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import scssBase from '../styles/styles.scss'
@@ -26,7 +27,7 @@ const Header = () => {
       $('.site-header').css('background', '#f6f6f6');
       $('body').css('overflow-y', 'auto');
     } else {
-      $('.site-header').css('background', 'white');
+      $('.site-header').css('background', '#30f');
       $('body').css('overflow-y', 'hidden');
       $('body').css('display', 'hidden');
 
@@ -59,7 +60,8 @@ const Header = () => {
               <div className="">
                 <Link to='/' id="logo" className="navbar-brand  col-4 col-sm-7 col-md-4 " style={{ color: "#000" }}>
                   <img
-                    src={logo}
+                    src={clickNum ? logoWhite : logo}
+
                     alt="логотип"
                     className=""
                   />
@@ -102,13 +104,16 @@ const Header = () => {
 
             <span className="nav-item ">
               <a href="mailto:disp2010@etalonts.ru?subject=Письмо с сайта&body=Здравствуйте!" className="contacts__item-text  navbar-collapse-item navbar-collapse-item_mail">
-                <i style={{ float: "left", color: "#30f" }} className="gg-mail" />
+              {/* src={clickNum ? logoWhite : logo} */}
+                
+                <i style={clickNum ? { float: "left", color: '#fff'} : { float: "left", color: '#30f'}} className="gg-mail" />
+                {/* <i style={{ float: "left", color:  }} className="gg-mail" /> */}
               </a>
               <a
                 href="tel:+79821832640"
                 className="contacts__item-text  navbar-collapse-item"
               >
-                <i style={{ float: "left", color: "#30f" }} className="gg-phone" />
+                <i style={clickNum ? { float: "left", color: '#fff'} : { float: "left", color: '#30f'}} className="gg-phone" />
               </a>
               <button
                 className="header__burger_button"
