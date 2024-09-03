@@ -850,10 +850,10 @@ const Body = () => {
                     </div>
                 </div>
             </div>
-            <div className="container-fluid plast__two" style={{ marginTop: 60 }}>
+                        <div className="container-fluid plast__two" style={{ marginTop: 250 }}>
                 <div className="row">
-                    <div className="col-9 col-lg-3 offset-0 offset-lg-1">
-                        <h1 className="WhyChooseUs2" style={{ marginTop: 60 }}>
+                    <div className="col-10 offset-0 offset-lg-1">
+                        <h1 className="pageTitle Strong pageTitle_main">
                             Проведение инструктажей
                         </h1>
                         <p
