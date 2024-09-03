@@ -854,7 +854,7 @@ const Body = () => {
                 <div className="row">
                     <div className="col-9 col-lg-3 offset-0 offset-lg-1">
                         <p
-                            style={{ marginTop: 20, fontSize:27px; }}
+                            style={{ marginTop: 20, fontSize:"27px"; }}
                             className="vacancy-card__text vacancy-card__text_description"
                         >
                             Наш специалист по БДД,
