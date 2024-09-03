@@ -852,10 +852,10 @@ const Body = () => {
             </div>
                         <div className="container-fluid plast__two" style={{ marginTop: 250 }}>
                 <div className="row">
-                    <div className="col-9 col-lg-3 offset-0 offset-lg-1">
+                    <div className="col-12 col-lg-3 offset-0 offset-lg-1">
                         <p
-                            style={{ marginTop: 20, fontSize:27 }}
-                            className="vacancy-card__text vacancy-card__text_description"
+                            style={{ fontSize:27 }}
+                            className="vacancy-card__text vacancy-card__text_description baliberdin"
                         >
                             Наш специалист по БДД,
                             <a
