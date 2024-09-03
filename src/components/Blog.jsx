@@ -827,7 +827,7 @@ const Blog = () => {
   React.useEffect(() => {
     const fetchMassmedia = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/massmedia');
+        const response = await axios.get('/api/getMassmedia');
         setMassmedia(response.data)
       } catch (error) {
         console.error('Error fetching the massmedia', error)

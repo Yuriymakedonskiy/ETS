@@ -8,13 +8,13 @@ dotenv.config();
 
 const app = express();
 const port = 5000;
-const secretKey = 'miminoKika1977';
-
+const secretKey = process.env.DATA_API_KEY;
+mongoose.set('strictQuery', true);
 app.use(cors());
 app.use(express.json());
 
 const mongoURL = process.env.MONGODB_URI;
-// console.log(mongoURL)
+
 
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
@@ -23,6 +23,8 @@ mongoose.connect(mongoURL, {
     .then(() => console.log('Connected to MongoDB Atlas'))
     .catch(err => console.error('Error connecting to MongoDB Atlas:', err));
 
+const servicesRouter = require('./api/services');
+app.use('/api/services', servicesRouter);
 
 const vacancieSchema = new mongoose.Schema({
     title: String,
@@ -140,8 +142,4 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-module.export = app;
-
-// app.listen(port, () => {
-//     console.log(`Server is running on http://localhost:${port}`);
-// })
+module.exports = app;

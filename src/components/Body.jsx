@@ -52,7 +52,7 @@ const Body = () => {
     React.useEffect(() => {
       const fetchServices = async () => {
         try {
-          const response = await axios.get('https://etalontrans.vercel.app/api/services');
+          const response = await axios.get('/api/getServices');
           setServices(response.data)
         } catch (error) {
           console.error('Error fetching the services', error)
@@ -318,13 +318,13 @@ const Body = () => {
                         <br />
                         <br />
                         <div className="row">
-                        {services.map((service) => (
+                        {services.map((service, id) => (
                             <div class="col offset-0">
 
                                 <a href={`mailto:disp2010@etalonts.ru?subject=Интерес к услуге '${service.title}' &body=Здравствуйте! Меня заинтересовла услуга '${service.title}'. Расскажите пожалуйста подробнее о условиях и деталях`}
                                 // target="_blank"
                                 >
-                                    <h2 style={{marginTop:'-10px'}} class="vacancy-card__title"><span class="numbers-big-blue">{service.id}.
+                                    <h2 style={{marginTop:'-10px'}} class="vacancy-card__title"><span class="numbers-big-blue">{id+1}.
 
                                     </span>
                                         <br />

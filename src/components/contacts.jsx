@@ -6,6 +6,7 @@ import scss from '../styles/contacts.scss'
 import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import PopupLogo from './UI/popup/PopupLogo'
 
 const Contacts = () => {
   setTimeout(scrollBar, 10)
@@ -18,7 +19,7 @@ const Contacts = () => {
   useEffect(() => {
     const fetchPdfcart = async () => {
       try {
-        const response = await axios.get('https://etalontrans.vercel.app/api/pdfcart');
+        const response = await axios.get('/api/getPdfcart');
         setPdfcart(response.data)
       } catch (error) {
         console.error('Error fetching the pdfcart', error)
@@ -152,6 +153,8 @@ style={{ marginTop: "-130px", marginBottom: 90 }}
 </div>
 
 <Footer/>
+<PopupLogo />
+      
     </>
   )
 }
