@@ -853,11 +853,8 @@ const Body = () => {
                         <div className="container-fluid plast__two" style={{ marginTop: 250 }}>
                 <div className="row">
                     <div className="col-9 col-lg-3 offset-0 offset-lg-1">
-                        <h1 className="pageTitle Strong pageTitle_main">
-                            Проведение инструктажей
-                        </h1>
                         <p
-                            style={{ marginTop: 20 }}
+                            style={{ marginTop: 20, fontSize:27px; }}
                             className="vacancy-card__text vacancy-card__text_description"
                         >
                             Наш специалист по БДД,
