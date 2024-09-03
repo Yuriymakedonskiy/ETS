@@ -122,7 +122,7 @@ const Body = () => {
                      <div className="container-fluid plast__two" style={{ marginTop: 100 }}>
                 <div className="row">
                     <div className="col-10 offset-0 offset-lg-1">
-                        <h1 className="pageTitle pageTitle_main Strong" style={{ marginBottom: 20 }}>
+                        <h1 className="pageTitle pageTitle_main Strong"}>
                             Транспортная компания в ХМАО-Югре
                             <span style={{ color: "#30f" }}>.</span>
                         </h1>
