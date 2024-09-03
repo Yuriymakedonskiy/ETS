@@ -48,6 +48,7 @@ import axios from 'axios';
 
 const Body = () => {
     const [services, setServices] = useState([]);
+    const [vacancies, setVacancies] = useState([]);
 
     React.useEffect(() => {
       const fetchServices = async () => {
@@ -58,22 +59,20 @@ const Body = () => {
           console.error('Error fetching the services', error)
         }
       };
-      fetchServices();
-    }, []);
-    
-    const [vacancies, setVacancies] = useState([]);
-
-  React.useEffect(() => {
-    const fetchVacancies = async () => {
+        
+  const fetchVacancies = async () => {
       try {
-        const response = await axios.get('https://etalontrans.vercel.app/api/vacancies');
+        const response = await axios.get('/api/getVacancies');
         setVacancies(response.data)
       } catch (error) {
         console.error('Error fetching the vacancies', error)
       }
     };
+    
+    fetchServices();
     fetchVacancies();
-  }, []);
+
+    }, []);
  
   
 
