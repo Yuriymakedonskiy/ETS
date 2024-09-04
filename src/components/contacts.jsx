@@ -83,36 +83,46 @@ const Contacts = () => {
   </Helmet>
 
 <Header/>
+<h1 className="liner pageTitle " style={{ color: "#30f", marginTop: 50 }}>
+        КОНТАКТЫ
+      </h1>
 <div className="container-fluid plast__two" style={{ marginBottom: 100 }}>
 <div className="row">
   <div className="col-12 offset-0 offset-xl-1">
-    <h1 className="pageTitle">
-      Контакты<span style={{ color: "#30f" }}>.</span>
-    </h1>
-    <a
-      href="tel:+73463210555"
-      style={{ textDecoration: "none", color: "#30f" }}
-    >
-      <h2 style={{ marginLeft: 0 }} className="pageText pageText_main">
-        <span className="telegramId">8-3463-210-555</span>
-      </h2>
-    </a>
+    
   </div>
 </div>
 </div>
 <div
 className="container-fluid plast__two"
-style={{ marginTop: "-130px", marginBottom: 90 }}
+style={{ marginTop: "-70px", marginBottom: 90 }}
 >
+<div className="row" style={{marginBottom:'-40px'}}>
+  <div className="col-11 col-md-5 col-lg-4 offset-0 offset-sm-0 offset-xl-1">
+    <a
+      href="tel:+73463210555"
+      style={{ textDecoration: "none", color: "#30f" }}
+    >
+      <h2 style={{ marginLeft: 0 }}>
+        <span className="telegramId">8-3463-210-555</span>
+      </h2>
+    </a>
+    </div>
+    </div>
 <div className="row">
   <div className="col-11 col-md-5 col-lg-4 offset-0 offset-sm-0 offset-xl-1">
+        
     <h2 className="vacancy-card__title">ООО «ЭталонТрансСервис»</h2>
     <p className="vacancy-card__text vacancy-card__text_description">
       <span>
+
         628331, Нефтеюганский район,
-        <br /> г.п. Пойковский, Промзона стр. 9. <br />{" "}
-        <span onClick={YandexCart} className="cart__link">{yandexCartText}</span>{" "}
+        <br /> г.п. Пойковский, Промзона стр. 9. <br />
       </span>
+      <span onClick={YandexCart} className="cart__link">{yandexCartText}</span>{" "}
+      <br />  
+      <br />  
+
     </p>
     {pdfcart.map((pdf, index) => (
 

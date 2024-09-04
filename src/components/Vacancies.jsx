@@ -65,12 +65,13 @@ const Vacancies = () => {
       </Helmet>
 
       <Header />
+      <h1 className="liner pageTitle " style={{ color: "#30f", marginTop: 50 }}>
+        КАРЬЕРА
+      </h1>
       <div className="container-fluid plast__two">
         <div className="row">
           <div className="col-10 offset-0 offset-lg-1">
-            <h1 className="pageTitle">
-              Работай с нами<span style={{ color: "#30f" }}>.</span>
-            </h1>
+
             <br />
             <h2 className="page__text">
               <span style={{ color: "#30f", fontSize: 45, fontWeight: 700 }}>

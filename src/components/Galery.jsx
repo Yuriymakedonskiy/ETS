@@ -61,9 +61,8 @@ const Galery = () => {
       <Header />
       <div className="container-fluid plast__two" style={{ marginTop: 0 }}>
         <div className="row">
-          <h1 className="pageTitle depart__title">
-            Галерея<span style={{ color: "#30f" }}>.</span>
-          </h1>
+          <h1 className="liner pageTitle " style={{ color: "#30f", marginTop: 50 }}>
+            ГАЛЕРЕЯ      </h1>
           <br />
         </div>
       </div>
