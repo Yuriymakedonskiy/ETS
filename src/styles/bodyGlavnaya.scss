@@ -350,6 +350,9 @@ animation-play-state: paused;
 }
 
 @media (min-width: 991px) {
+  .baliberdin{
+    margin-top: 200px;
+  }
   .vacancy-card__text-float-left {
     margin-left: -10px;
   }
@@ -1149,7 +1152,7 @@ input:checked+.slider:before {
 }
 
 .vacancy-card__text_description {
-  color: rgba(0, 0, 0, .6);
+  color: rgba(0, 0, 0, .9);
   /* margin-bottom: 1.5625rem; */
 }
 

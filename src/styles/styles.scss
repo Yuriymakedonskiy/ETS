@@ -1,10 +1,7 @@
-@font-face {
-  font-family: 'Inter';
-  src: url('../../src/fonts/Inter-V.ttf') format('truetype');
-}
+@import url("../../src/fonts/aeroport/stylesheet.css");
 
 body {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Aeroport", Arial, sans-serif;
   font-weight: 400;
   font-size: 1rem;
   background-color: #f6f6f6;
@@ -277,7 +274,10 @@ body {
   top: 0;
   left: 0;
   opacity: 1;
-  background: #fff;
+  background: #30f;
+}
+.popup p{
+  color: #fff;
 }
 
 .popup__containerInfo {

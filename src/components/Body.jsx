@@ -122,7 +122,7 @@ const Body = () => {
                      <div className="container-fluid plast__two" style={{ marginTop: 100 }}>
                 <div className="row">
                     <div className="col-10 offset-0 offset-lg-1">
-                        <h1 className="pageTitle pageTitle_main Strong">
+                        <h1 className="pageTitle pageTitle_main Strong" style={{ marginBottom: 20 }}>
                             Транспортная компания в ХМАО-Югре
                             <span style={{ color: "#30f" }}>.</span>
                         </h1>
@@ -252,36 +252,36 @@ const Body = () => {
                     </p>
                     <div className="row">
                         <div className="col plast__block">
-                            <p className="vacancy-card__text vacancy-card__text_description">
                                 <span>
                                     <span className="numbers-big-blue">
                                         1 <br />
                                     </span>
+                            <p className="vacancy-card__text vacancy-card__text_description">
                                     Завоз и вывоз оборудования, монтаж емкостей для ГРП, подвоз
                                     проппанта
-                                </span>
                             </p>
+                                </span>
                         </div>
                         <div className="col plast__block">
-                            <p className="vacancy-card__text vacancy-card__text_description">
                                 <span>
                                     <span className="numbers-big-blue">
                                         2 <br />
                                     </span>
+                            <p className="vacancy-card__text vacancy-card__text_description">
                                     Затарка емкостей технологической жидкостью{" "}
-                                </span>
                             </p>
+                                </span>
                         </div>
                         <div className="col-11 plast__block">
-                            <p className="vacancy-card__text vacancy-card__text_description">
                                 <span>
                                     <span className="numbers-big-blue">
                                         3 <br />
                                     </span>
+                            <p className="vacancy-card__text vacancy-card__text_description">
                                     Получение подвоз солевого раствора вакуумными машинами,
                                     сопровождение ГРП спецтехникой
-                                </span>
                             </p>
+                                </span>
                         </div>
                     </div>
                 </div>
@@ -783,6 +783,7 @@ const Body = () => {
                         >
                             Безопасность
                         </h3>
+                        
                         <p className="vacancy-card__text vacancy-card__text_description text-center">
                             «ЭталонТрансСервис» гарантирует минимизацию рисков при реализации
                             программы производственной безопасности
@@ -853,13 +854,9 @@ const Body = () => {
             </div>
             <div className="container-fluid plast__two" style={{ marginTop: 60 }}>
                 <div className="row">
-                    <div className="col-9 col-lg-3 offset-0 offset-lg-1">
-                        <h1 className="WhyChooseUs2" style={{ marginTop: 60 }}>
-                            Проведение инструктажей
-                        </h1>
-                        <p
-                            style={{ marginTop: 20 }}
-                            className="vacancy-card__text vacancy-card__text_description"
+                    <div className="col-9 col-lg-3 offset-0 offset-lg-1 ">
+
+                        <p style={{fontSize:27}} className="baliberdin vacancy-card__text vacancy-card__text_description "
                         >
                             Наш специалист по БДД,
                             <a
@@ -872,7 +869,7 @@ const Body = () => {
                                 href="tel:+79224054081"
                                 style={{ textDecoration: "none" }}
                             >
-                                <span className="_link-border"> Балыбердин Олег Павлович, <br /></span>
+                                <span style={{fontSize:27}}> Балыбердин Олег Павлович, <br /></span>
                             </a>
                             проводит перед каждой вахтой предрейсовый инструктаж
 
