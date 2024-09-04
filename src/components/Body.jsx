@@ -48,6 +48,7 @@ import axios from 'axios';
 
 const Body = () => {
     const [services, setServices] = useState([]);
+    const [vacancies, setVacancies] = useState([]);
 
     React.useEffect(() => {
       const fetchServices = async () => {
@@ -58,22 +59,20 @@ const Body = () => {
           console.error('Error fetching the services', error)
         }
       };
-      fetchServices();
-    }, []);
-    
-    const [vacancies, setVacancies] = useState([]);
-
-  React.useEffect(() => {
-    const fetchVacancies = async () => {
+        
+  const fetchVacancies = async () => {
       try {
-        const response = await axios.get('https://etalontrans.vercel.app/api/vacancies');
+        const response = await axios.get('/api/getVacancies');
         setVacancies(response.data)
       } catch (error) {
         console.error('Error fetching the vacancies', error)
       }
     };
+    
+    fetchServices();
     fetchVacancies();
-  }, []);
+
+    }, []);
  
   
 
@@ -118,11 +117,10 @@ const Body = () => {
         <>
         
             <link href={scss} rel="stylesheet" type="text/css" />
-
-                     <div className="container-fluid plast__two" style={{ marginTop: 100 }}>
+ <div className="container-fluid plast__two" style={{ marginTop: 100 }}>
                 <div className="row">
                     <div className="col-10 offset-0 offset-lg-1">
-                        <h1 className="pageTitle pageTitle_main Strong" style={{ marginBottom: 20 }}>
+                    <h1 className="pageTitle pageTitle_main Strong" style={{ marginBottom: 20 }}>
                             Транспортная компания в ХМАО-Югре
                             <span style={{ color: "#30f" }}>.</span>
                         </h1>
@@ -852,11 +850,15 @@ const Body = () => {
                     </div>
                 </div>
             </div>
-            <div className="container-fluid plast__two" style={{ marginTop: 60 }}>
+                        <div className="container-fluid plast__two" style={{ marginTop: 250 }}>
                 <div className="row">
-                    <div className="col-9 col-lg-3 offset-0 offset-lg-1 ">
-
-                        <p style={{fontSize:27}} className="baliberdin vacancy-card__text vacancy-card__text_description "
+                    <div className="col-9 col-lg-3 offset-0 offset-lg-1">
+                        <h1 className="WhyChooseUs2" style={{ marginTop: 60 }}>
+                            Проведение инструктажей
+                        </h1>
+                        <p
+                            style={{ marginTop: 20 }}
+                            className="vacancy-card__text vacancy-card__text_description"
                         >
                             Наш специалист по БДД,
                             <a

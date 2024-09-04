@@ -206,6 +206,9 @@
 }
 
 @media (min-width: 991px) {
+  .baliberdin{
+    margin-top:200px;
+  }
   .Uslugi__text {
     margin-top: 40px;
   }
@@ -1423,7 +1426,7 @@ video,
 ._link-border {
   cursor: pointer;
   color: rgba(0, 0, 0, 1);
-  border-bottom: 1px dashed rgba(0, 0, 0, .3);
+  border-bottom: 1px dashed rgba(0, 0, 0, .6);
   transition: border-color 2.15s ease-in-out;
 }
 
