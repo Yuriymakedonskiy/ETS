@@ -120,8 +120,8 @@ const Body = () => {
             <link href={scss} rel="stylesheet" type="text/css" />
  <div className="container-fluid plast__two" style={{ marginTop: 100 }}>
                 <div className="row">
-                    <div className="col-10 offset-0 offset-lg-1">
-                    <h1 className="pageTitle pageTitle_main Strong" style={{ marginBottom: 20 }}>
+                    <div className="col-12 offset-0 offset-lg-1">
+                    <h1 className="pageTitle Strong" style={{ marginBottom: 20 }}>
                             Транспортная компания в Западной Сибири
                             <span style={{ color: "#30f" }}>.</span>
                         </h1>
