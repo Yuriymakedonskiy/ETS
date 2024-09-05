@@ -405,12 +405,11 @@ nav .accordion-body i {
   align-items: center;
 }
 
-
 .pageTitle {
   color: #000;
   font-weight: 700;
-  font-size: 4.6875rem;
-  line-height: 4.875rem;
+  font-size: 4.6875rem; /* Основной размер текста */
+  line-height: 4.875rem; /* Высота строки */
   letter-spacing: -.05em;
   margin-bottom: 0.225rem;
   margin-left: -6px;
@@ -418,15 +417,40 @@ nav .accordion-body i {
   z-index: 0;
 }
 
-@media (max-width: 767px) {
-
+/* Для экранов с шириной меньше 1200px */
+@media (max-width: 1200px) {
   .pageTitle {
-    font-size: 3.25rem;
-    line-height: 3.25rem;
-    margin-bottom: 1.25rem;
+    font-size: 4rem; /* Уменьшаем размер текста */
+    line-height: 4.2rem;
   }
 }
 
+/* Для экранов с шириной меньше 992px */
+@media (max-width: 992px) {
+  .pageTitle {
+    font-size: 3.5rem; /* Ещё меньше для экранов средней ширины */
+    line-height: 3.75rem;
+    margin-left: -4px; /* Корректируем отступ слева */
+  }
+}
+
+/* Для экранов с шириной меньше 768px */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 3rem; /* Уменьшаем размер текста для планшетов */
+    line-height: 3.25rem;
+    margin-left: -3px;
+  }
+}
+
+/* Для экранов с шириной меньше 576px */
+@media (max-width: 576px) {
+  .pageTitle {
+    font-size: 2.5rem; /* Размер для мобильных устройств */
+    line-height: 2.75rem;
+    margin-left: -2px;
+  }
+}
 @media (max-width: 991px) {
 
   .gg-mail,
