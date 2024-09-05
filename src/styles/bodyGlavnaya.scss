@@ -432,32 +432,6 @@ animation-play-state: paused;
   }
 }
 
-@media (max-width: 374px) {
-  .pageTitle_main {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 375px) {
-  .pageTitle_main {
-    font-size: 2.875rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .pageTitle_main {
-    font-size: 3.25rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .pageTitle_main {
-    max-width: 34.25rem;
-    margin-bottom: 3rem;
-  }
-}
-.pageTitle_main{
-z-index: 999;
-}
 @media (max-width: 375px) {
   .pageTitle {
     font-size: 2.875rem;
@@ -1817,10 +1791,10 @@ sub {
     margin-top: -80px;
   }
 
-  .Strong {
-    text-align: justify;
-    word-break: break-all;
-  }
+  // .Strong {
+  //   text-align: justify;
+  //   word-break: break-all;
+  // }
 
   .acredit img {
     height: 80px;
