@@ -1413,8 +1413,16 @@ video,
   border-bottom: 1px dashed rgba(0, 0, 0, .3);
   transition: border-color .15s ease-in-out;
 }
+._link-bufer {
+  line-height: 1.625rem;
+  letter-spacing: -.04em;
+  cursor: pointer;
+  color: rgba(0, 0, 0, .9);
+  border-bottom: 1px dashed rgba(0, 0, 0, .3);
+  transition: border-color .15s ease-in-out;
+}
 
-.cart__link:hover {
+.cart__link:hover, ._link-bufer:hover {
   border-bottom: 1px dashed rgba(0, 0, 0, .0);
 
 }
@@ -1638,15 +1646,14 @@ sub {
 
 
 .main-roller {
-  /* height:100vh; */
-  width: 100%;
   align-items: center;
-  /* padding: 50vh auto; */
   padding-bottom: 10vh;
   background-color: #30f;
-  justify-content: center;
+  // justify-content: center;
   text-align: center;
-}
+}  
+
+
 
 .main-roller h1 {
   text-align: center;
@@ -1655,64 +1662,16 @@ sub {
 
   color: #F1FAEE;
   font-size: 4rem;
-}
-
-.roller {
-  height: 4.125rem;
-  line-height: 4rem;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #A8DADC;
-}
+}  
 
 
-#spare-time {
-  font-size: 1rem;
+ .departamentText {
+  font-size: 1.6rem;
+  line-height: 1;
   font-style: italic;
-  letter-spacing: 1rem;
-  margin-top: 0;
+  letter-spacing: .3rem;
+  margin: 3rem auto 2.1rem auto;
   color: #A8DADC;
-
-}
-.roller #rolltext {
-  position: absolute;
-  top: 0;
-  animation: slide 10s infinite;
-  font-size: 2rem;
-  font-style: italic;
-  letter-spacing: 1rem;
-  margin-top: 0;
-  color: #A8DADC;
-}
-
-@keyframes slide {
-  0% {
-    top: -40rem;
-  }
-
-  16% {
-    top: -36rem;
-  }
-
-  32% {
-    top: -32rem;
-  }
-
-  48% {
-    top: -28rem;
-  }
-
-  64% {
-    top: -24rem;
-  }
-
-  80% {
-    top: -20rem;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1733,28 +1692,7 @@ sub {
     letter-spacing: 0.1rem;
   }
 
-  .roller #rolltext {
-    animation: slide-mob 5s infinite;
-
-  }
-
-  // @keyframes slide-mob {
-  //   0% {
-  //     top: 0;
-  //   }
-
-  //   25% {
-  //     top: -2.125rem;
-  //   }
-
-  //   50% {
-  //     top: -4.25rem;
-  //   }
-
-  //   72.5% {
-  //     top: -6.375rem;
-  //   }
-  // }
+  
 }
 
 .acredit .rn-neft {

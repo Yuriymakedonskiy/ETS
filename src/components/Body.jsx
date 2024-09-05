@@ -120,7 +120,7 @@ const Body = () => {
             <link href={scss} rel="stylesheet" type="text/css" />
  <div className="container-fluid plast__two" style={{ marginTop: 100 }}>
                 <div className="row">
-                    <div className="col-12 offset-0 offset-lg-1">
+                    <div className="col-12 col-md-9 offset-0 offset-lg-1">
                     <h1 className="pageTitle Strong" style={{ marginBottom: 20 }}>
                             Транспортная компания в Западной Сибири
                             <span style={{ color: "#30f" }}>.</span>
@@ -853,7 +853,7 @@ const Body = () => {
             </div>
                         <div className="container-fluid plast__two" style={{ marginTop: 250 }}>
                 <div className="row">
-                    <div className="col-9 col-lg-3 offset-0 offset-lg-1">
+                    <div className="col-12 col-lg-4 offset-0 offset-lg-1">
                         <h1 className="WhyChooseUs2" style={{ marginTop: 60 }}>
                             Проведение инструктажей
                         </h1>
@@ -861,24 +861,25 @@ const Body = () => {
                             style={{ marginTop: 20 }}
                             className="vacancy-card__text vacancy-card__text_description"
                         >
-                            Наш специалист по БДД,
+                            Наш специалист по БДД,<br/>
                             <a
                                 // onClick={() => setNumberCopy(!numberCopy)}
                                 onClick={numberCopyCall}
                                 id="liveToastBtn"
                                 data-toggle="tooltip"
                                 title={79224054081}
-                                className="_link-bufer"
                                 href="tel:+79224054081"
                                 style={{ textDecoration: "none" }}
                             >
-                                <span style={{fontSize:27}}> Балыбердин Олег Павлович, <br /></span>
+                                <span 
+                                className="_link-bufer"
+                                 > Балыбердин Олег Павлович, <br /></span>
                             </a>
+                        
                             проводит перед каждой вахтой предрейсовый инструктаж
-
                         </p>
                     </div>
-                    <div className="col-12 col-lg-7 offset-0 offset-lg-1">
+                    <div className="col-12 col-lg-6 offset-0 offset-lg-1">
                         <div className="row">
                             <div
                                 id="carouselExampleDark5"
@@ -1088,37 +1089,36 @@ const Body = () => {
             <div className="main-roller  container-fluid">
                 <h1 className="pageTitle depart__title pageTitle_main">
                     Департаменты
-                    <div className="roller">
-                        <span id="rolltext">
+
+                    <div className="container">
+                        <div className="row">
+
+                        <div className="col departamentText">
                             Диспетчерская служба
-                            <br />
-                            Специалист по от, тб и бдд
-                            <br />
-                            Штатные механики
-                            <br />
-                            Кадровая служба
-                            <br />
-                            Финансовая служба и бухгалтерия
-                            <br />
-                        </span>
-                    </div>
-                </h1>
-                <br />
-                {/* <div className="container-fluid"> */}
-                    <center>
-                        <div
-                            style={{ marginTop: 25, marginBottom: 20 }}
-                            className="col-12 col-lg-10 blockImage-powering "
-                        >
-                            <img
-                                src={departaments}
-                                alt="Департаменты"
-                                className="img-fluid"
-                            />
+
                         </div>
-                    </center>
-                {/* </div> */}
-                <br />
+                        <div className="col departamentText">
+                            Финансовая служба и бухгалтерия
+
+                        </div>
+                        </div>
+                        <div className="row">
+                        <div className="col departamentText">
+
+                            Штатные механики
+                        </div>
+                        <div className="col departamentText">
+                        Специалист по от, тб и бдд
+
+                        </div>
+                        <div className="col departamentText">
+                            Кадровая служба
+
+                        </div>
+                    </div>
+                        </div>
+                        
+                </h1>
             </div>
             <div className="container-fluid plast__two" style={{ marginTop: 150 }}>
                 <div className="row">
