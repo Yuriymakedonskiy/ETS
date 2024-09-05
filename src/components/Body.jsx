@@ -44,6 +44,7 @@ import handshake from '../images/glavnaya/handshake.svg'
 // SCSS
 import scss from '../styles/bodyGlavnaya.scss'
 import axios from 'axios';
+import PopupSiberia from './UI/popup/PopupSiberia';
 
 
 const Body = () => {
@@ -121,7 +122,7 @@ const Body = () => {
                 <div className="row">
                     <div className="col-10 offset-0 offset-lg-1">
                     <h1 className="pageTitle pageTitle_main Strong" style={{ marginBottom: 20 }}>
-                            Транспортная компания в ХМАО-Югре
+                            Транспортная компания в Западной Сибири
                             <span style={{ color: "#30f" }}>.</span>
                         </h1>
                         <p className="pageText pageText_main">
@@ -1287,6 +1288,7 @@ const Body = () => {
                 </div>
             </div>
             <PopupLogo />
+            <PopupSiberia/>
         </>
 
 

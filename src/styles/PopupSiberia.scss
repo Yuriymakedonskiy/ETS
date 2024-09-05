@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'Dusha';
+    src: url('../../src/fonts/dusha/dushav5_regular.ttf') format('truetype');
+}
+
+.popup__siberia h1 {
+    font-family: 'Dusha', 'Aeroport', 'Arial';
+    font-weight: 700;
+    font-size: 10.6875rem;
+    line-height: 9.875rem;
+    letter-spacing: -0em;
+    color: #30f;
+}
+
+.popup__siberia {
+    position: fixed;
+    width: 100%;
+    z-index: 9998;
+    height: 100%;
+
+    animation: fade 1s ease forwards;
+    animation-delay: 3s;
+    -webkit-animation: fade 1s ease forwards;
+    -webkit-animation-delay: 3s;
+    -moz-animation: fade 1s ease forwards;
+    -moz-animation-delay: 3s;
+    text-align: center;
+    top: 0%;
+    left: 0;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), /* Основная тень */
+                0 6px 6px rgba(0, 0, 0, 0.1); /* Дополнительная мягкая тень */
+}
+
+.popup__siberia::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #ffffff, #dcdcdc); /* Светлый градиент для эффекта глубины */
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.popup__container__siberia{
+    top: 20%;
+    width: 60%;
+    position: relative;
+    left: 20%;
+}
+
+@media (max-width: 1200px) {
+    .popup__siberia h1 {
+        font-size: 8rem;
+        line-height: 7.5rem;
+    }
+}
+
+/* Для экранов с шириной меньше 992px */
+@media (max-width: 992px) {
+    .popup__siberia h1 {
+        font-size: 6rem;
+        line-height: 5.5rem;
+    }
+}
+
+/* Для экранов с шириной меньше 768px */
+@media (max-width: 768px) {
+    .popup__siberia h1 {
+        font-size: 4.5rem;
+        line-height: 4rem;
+    }
+}
+
+/* Для экранов с шириной меньше 576px */
+@media (max-width: 576px) {
+    .popup__siberia h1 {
+        font-size: 3rem;
+        line-height: 2.5rem;
+    }
+}

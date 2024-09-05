@@ -39,26 +39,63 @@
   z-index: 9999;
   height: 100%;
   animation: fade 1s ease forwards;
-  animation-delay: 1.7s;
+  animation-delay: 1.9s;
   -webkit-animation: fade 1s ease forwards;
-  -webkit-animation-delay: 1.7s;
+  -webkit-animation-delay: 1.9s;
   -moz-animation: fade 1s ease forwards;
-  -moz-animation-delay: 1.7s;
+  -moz-animation-delay: 1.9s;
   text-align: center;
   top: 0;
   left: 0;
-  background: #1E2345;
-}
-
-@media (max-width: 991px) {
-  .popup__logo {
-    display: none;
-  }
+  background: #30f;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), /* Основная тень */
+  0 6px 6px rgba(0, 0, 0, 0.2); /* Дополнительная мягкая тень */
+  overflow: hidden;
 }
 
 .popup__container__logo img {
   transform: translate3d(0, 30%, 0);
 }
+
+/* Для объёмного эффекта с использованием градиентов */
+.popup__logo::before {
+  content: '';
+  background: linear-gradient(145deg, #4a4aff, #0000cc); /* Градиент для создания глубины */
+  z-index: -1;
+}
+
+@media (max-width: 1200px) {
+  .popup__container__logo img {
+    width: 70%; /* Уменьшаем изображение */
+    max-width: 500px; /* Ограничиваем максимальную ширину */
+  }
+}
+
+/* Для экранов с шириной меньше 992px */
+@media (max-width: 992px) {
+  .popup__container__logo img {
+    width: 60%; /* Ещё меньше для средних экранов */
+    max-width: 400px;
+  }
+}
+
+/* Для экранов с шириной меньше 768px */
+@media (max-width: 768px) {
+  .popup__container__logo img {
+    width: 50%; /* Уменьшаем для планшетов */
+    max-width: 300px;
+  }
+}
+
+/* Для экранов с шириной меньше 576px */
+@media (max-width: 576px) {
+  .popup__container__logo img {
+    width: 40%; /* Размер для мобильных устройств */
+    max-width: 200px;
+  }
+}
+
+
 
 
 .tag {
