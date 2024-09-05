@@ -287,8 +287,8 @@ const Body = () => {
             </center>
             <div className="container-fluid Uslugi plast__two" style={{ marginTop: 150 }}>
                 <div className="row">
-                    <div className="col-10 offset-0 offset-lg-1">
-                        <h1 className="pageTitle pageTitle_main" style={{ marginTop: 50 }}>
+                    <div className="col-12 offset-0 offset-lg-1">
+                        <h1 className="pageTitle " style={{ marginTop: 50 }}>
                             Услуги<span style={{ color: "#30f" }}>.</span>
                         </h1>
                         <br />
@@ -348,8 +348,8 @@ const Body = () => {
             </div>
             <div className="container-fluid plast__two" style={{ marginTop: 250 }}>
                 <div className="row">
-                    <div className="col-10 offset-0 offset-lg-1">
-                        <h1 className="pageTitle Strong pageTitle_main">
+                    <div className="col-12 offset-0 offset-lg-1">
+                        <h1 className="pageTitle Strong ">
                             Преимущества<span style={{ color: "#30f" }}>.</span>
                         </h1>
                         <br />
@@ -437,7 +437,7 @@ const Body = () => {
             <div className="container-fluid plast__two" style={{ marginTop: 200 }}>
                 <div className="row">
                     <div className="col-12 col-md-7 offset-0 offset-lg-1">
-                        <h1 className="pageTitle pageTitle_main">
+                        <h1 className="pageTitle ">
                             Выгоды заказчика<span style={{ color: "#30f" }}>.</span>
                         </h1>
                         <br />
@@ -600,8 +600,8 @@ const Body = () => {
                 style={{ marginTop: 200 }}
             >
                 <div className="row">
-                    <div className="col-10 col-md-7 offset-0 offset-lg-1">
-                        <h1 className="pageTitle pageTitle_main">
+                    <div className="col-12 col-md-7 offset-0 offset-lg-1">
+                        <h1 className="pageTitle ">
                             Результаты в Западной Сибири<span style={{ color: "#30f" }}>.</span>
                         </h1>
                         <br />
@@ -684,8 +684,8 @@ const Body = () => {
             </section>
             <div className="container-fluid plast__two" style={{ marginTop: 200 }}>
                 <div className="row">
-                    <div className="col-10 col-md-7 offset-0 offset-lg-1">
-                        <h1 className="pageTitle pageTitle_main Strong">
+                    <div className="col-12 col-md-7 offset-0 offset-lg-1">
+                        <h1 className="pageTitle Strong">
                             Профильная аккредитация<span style={{ color: "#30f" }}>.</span>
                         </h1>
                         <br />
@@ -1123,7 +1123,7 @@ const Body = () => {
             <div className="container-fluid plast__two" style={{ marginTop: 150 }}>
                 <div className="row">
                     <div className="col-10 offset-0 offset-lg-1">
-                        <h1 className="pageTitle pageTitle_main">
+                        <h1 className="pageTitle ">
                             Наши партнеры<span style={{ color: "#30f" }}>.</span>
                         </h1>
                         <br />
