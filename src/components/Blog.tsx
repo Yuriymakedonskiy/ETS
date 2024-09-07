@@ -1,15 +1,12 @@
-import React, { useState } from 'react'
-import dateFormat from "dateformat";
-import { i18n } from "dateformat";
+import React, { useState, useEffect } from 'react'
+import dateFormat, { i18n } from "dateformat";
 import { Link } from 'react-router-dom';
-
-import $ from 'jquery';
 import Header from './Header';
 import Footer from './Footer';
-import scss from '../styles/blog.scss'
+import '../styles/blog.scss'
 
 
-// IMG
+// IMG imports
 import owner from '../images/blog/owner1.jpg'
 import instagram from '../images/blog/instagram.svg'
 import vk from '../images/blog/vk.svg'
@@ -34,25 +31,39 @@ import beginCh1 from '../images/blog/НачалоЧ1.jpg'
 import beginCh2 from '../images/blog/НачалоЧ2.jpg'
 import beginCh3 from '../images/blog/НачалоЧ3.jpg'
 
-import Flickity from 'react-flickity-component'
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
+import Flickity from 'react-flickity-component';
 
+// Define FlickityOptions with a manual addition for `autoPlay`
+interface FlickityOptions {
+  wrapAround: boolean;
+  autoPlay: number | boolean; // Set it as number for milliseconds or boolean for true/false
+  pauseAutoPlayOnHover: boolean;
+  imagesLoaded: boolean;
+  pageDots: boolean; 
+}
 
-function Carousel() {
+const Carousel = () => {
+  const flickityOptions: FlickityOptions = {
+    wrapAround: true,
+    autoPlay: 3000, // Set autoPlay interval in milliseconds (or `true` for default)
+    pauseAutoPlayOnHover: true,
+    imagesLoaded: true,
+    pageDots: false,
+
+  };
+
   return (
     <Flickity
-      className={'carousel'} // default ''
-      elementType={'div'} // default 'div'
-      disableImagesLoaded={false} // default false
-      reloadOnUpdate // default false
-      static // default false
-      imagesLoaded={true}
-      wrapAround={true}
-      autoPlay={true}
-      pauseAutoPlayOnHover={true}
+      className={'carousel'}
+      elementType={'div'}
+      disableImagesLoaded={false}
+      reloadOnUpdate={false}
+      static={false}
+      options={flickityOptions} // Pass options here
     >
-      <div className="parent--el">
+            <div className="parent--el">
         <div className="two--col">
           <div className="is-item has--img">
             <figure className="the-img">
@@ -820,11 +831,23 @@ function Carousel() {
   )
 }
 
+interface Massmedia {
+  _id: number;
+  id: number;
+  text: string;
+  date: Date;
+  title: string;
+  media: string;
+  file: string;
+  link: string;
+}
+
+
 const Blog = () => {
   i18n.monthNames = ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июль", "Авг", "Сен", "Окт", "Ноя", "Дек", "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", " Декабрь",];
-  const [massmedia, setMassmedia] = useState([]);
+  const [massmedia, setMassmedia] = useState<Massmedia[]>([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchMassmedia = async () => {
       try {
         const response = await axios.get('/api/getMassmedia');
@@ -836,46 +859,41 @@ const Blog = () => {
     fetchMassmedia();
   }, []);
 
-  setTimeout(scrollBar, 10)
-  function scrollBar() {
-    $('body').css('overflow-y', 'auto');
-  }
 
   return (
     <>
-  <Helmet>
-  <title>Блог технического директора ЭталонТрансСервис</title>
-  <meta name="robots" content="index-follow" />
-  <meta
-    name="description"
-    content="Личная страница технического директора компании ЭталонТрансСервис. Узнайте о его профессиональном опыте, достижениях и подходе к управлению техническими проектами в сфере транспортных услуг."
-  />
-  <meta
-    name="keywords"
-    content="Блог, Альбина Топоркова, технический директор, статьи, вырезки из журналов, instagram, посты"
-  />
-  <meta
-    property="og:title"
-    content="Блог технического директора ЭталонТрансСервис"
-  />
-  <meta property="og:type" content="website" />
-  <meta
-    property="og:description"
-    content="Личная страница технического директора компании ЭталонТрансСервис. Узнайте о его профессиональном опыте, достижениях и подходе к управлению техническими проектами в сфере транспортных услуг."
-  />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" title="" alt="" />
-  <meta
-    property="twitter:title"
-    content="Блог технического директора ЭталонТрансСервис"
-  />
-  <meta
-    property="twitter:description"
-    content="Личная страница технического директора компании ЭталонТрансСервис. Узнайте о его профессиональном опыте, достижениях и подходе к управлению техническими проектами в сфере транспортных услуг."
-  />
-  <meta property="twitter:image" content="" title="" alt="" />
-  </Helmet>
-      <link href={scss} rel="stylesheet" type="text/css" />
+      <Helmet>
+        <title>Блог технического директора ЭталонТрансСервис</title>
+        <meta name="robots" content="index-follow" />
+        <meta
+          name="description"
+          content="Личная страница технического директора компании ЭталонТрансСервис. Узнайте о его профессиональном опыте, достижениях и подходе к управлению техническими проектами в сфере транспортных услуг."
+        />
+        <meta
+          name="keywords"
+          content="Блог, Альбина Топоркова, технический директор, статьи, вырезки из журналов, instagram, посты"
+        />
+        <meta
+          property="og:title"
+          content="Блог технического директора ЭталонТрансСервис"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="Личная страница технического директора компании ЭталонТрансСервис. Узнайте о его профессиональном опыте, достижениях и подходе к управлению техническими проектами в сфере транспортных услуг."
+        />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" title="" />
+        <meta
+          property="twitter:title"
+          content="Блог технического директора ЭталонТрансСервис"
+        />
+        <meta
+          property="twitter:description"
+          content="Личная страница технического директора компании ЭталонТрансСервис. Узнайте о его профессиональном опыте, достижениях и подходе к управлению техническими проектами в сфере транспортных услуг."
+        />
+        <meta property="twitter:image" content="" title="" />
+      </Helmet>
 
       <Header />
       <h1 className="liner pageTitle " style={{ color: "#30f", marginTop: 50 }}>
@@ -930,7 +948,8 @@ const Blog = () => {
       <div className="row plast__two" style={{ margin: "0 auto" }}>
 
         {massmedia.map((media, index) => (
-          <div className={`col-12 col-lg-5 offset-0 offset-lg-${index + 1 & 2 !== 0 ? 1 : 0}`}>
+          <div className={`col-12 col-lg-5 offset-0 offset-lg-${(index + 1) % 2 !== 0 ? 1 : 0}`}>
+
             <div className="file_block" style={{ margin: "50px 0" }}>
               <div className="file_block__text-top" style={{ padding: 10 }}>
                 <div className="file">
@@ -948,7 +967,7 @@ const Blog = () => {
                   </div>
                   <div className="row">
                     <div className="col-8 col-lg-3">
-                      <a style={{ textDecoration: "none", color: "#000" }} href="">
+                      <a style={{ textDecoration: "none", color: "#000" }} href='#'>
                         {media.media === 'instagram' &&
                           <img
                             src={instagram}
@@ -1023,12 +1042,12 @@ const Blog = () => {
                     </button>
                   </a>
                   :
-                    <Link style={{
-                      fontStyle: "italic",
-                      textDecoration: "none",
-                      color: "#000"
-                    }}
-                      to={`${media.file}`} target="_blank" download>
+                  <Link style={{
+                    fontStyle: "italic",
+                    textDecoration: "none",
+                    color: "#000"
+                  }}
+                    to={`${media.file}`} target="_blank" download>
 
                     <button
                       className="button_background__none"
@@ -1036,7 +1055,7 @@ const Blog = () => {
                     >
                       Посмотреть файл
                     </button>
-                      </Link>
+                  </Link>
                 }
               </div>
             </div>
@@ -1089,4 +1108,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default Blog;

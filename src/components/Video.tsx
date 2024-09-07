@@ -1,20 +1,13 @@
-import React from 'react'
-import $ from 'jquery';
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import scss from '../styles/video.scss'
+import '../styles/video.scss';
 import { Helmet } from 'react-helmet-async';
 
 const Video = () => {
-    setTimeout(scrollBar, 10)
-    function scrollBar() {
-        $('body').css('overflow-y', 'auto');
-    }
-    
-
+  
   return (
     <>
-    <link href={scss} rel="stylesheet" type="text/css" />
 
       <Helmet>
       <title>ЭталонТрансСервис — видеоматериалы</title>
@@ -31,13 +24,13 @@ const Video = () => {
     content="Изучайте видеоматериалы от ЭталонТрансСервис - вашего надежного партнера в сфере транспортных услуг. Просматривайте полезные обучающие ролики, информативные презентации и другие видеоматериалы, чтобы ознакомиться с нашими услугами и возможностями."
   />
   <meta property="og:url" content="" />
-  <meta property="og:image" content="" title="" alt="" />
+  <meta property="og:image" content="" title="" />
   <meta property="twitter:title" content="ЭталонТрансСервис — видеоматериалы" />
   <meta
     property="twitter:description"
     content="Изучайте видеоматериалы от ЭталонТрансСервис - вашего надежного партнера в сфере транспортных услуг. Просматривайте полезные обучающие ролики, информативные презентации и другие видеоматериалы, чтобы ознакомиться с нашими услугами и возможностями."
   />
-  <meta property="twitter:image" content="" title="" alt="" />
+  <meta property="twitter:image" content="" title="" />
   </Helmet>
 
     <Header/>
@@ -56,7 +49,7 @@ const Video = () => {
         title="YouTube video player"
         frameBorder={0}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen=""
+        allowFullScreen
       />
     </div>
   </div>
@@ -75,7 +68,7 @@ const Video = () => {
         title="YouTube video player"
         frameBorder={0}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen=""
+        allowFullScreen
       />
     </div>
   </div>
@@ -87,4 +80,4 @@ const Video = () => {
 </>
 )}
 
-export default Video
+export default Video;

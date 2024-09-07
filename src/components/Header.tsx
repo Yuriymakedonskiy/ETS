@@ -1,27 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import logo from '../images/ets.svg'
 import logoWhite from '../images/ets_White.png'
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
-import scssBase from '../styles/styles.scss'
+import '../styles/styles.scss'
 
 const Header = () => {
-  $(document).on('click', function (e) {
-    $('<div class="cursor">')
-      .css({
-        top: e.clientY,
-        left: e.clientX
-      })
-      .appendTo($(document.body))
-      .on('animationend webkitAnimationEnd', function (e) {
-        $(this).remove();
-      });
-  });
-  let [clickNum, setclickNum] = useState(false)
+  useEffect(() => {
+    setTimeout(() => {
+      $('body').css('overflow-y', 'auto');
+    }, 10);
+  }, []);
+  
+  useEffect(() => {
+    const handleClick = (e: JQuery.ClickEvent) => {
+      $('<div class="cursor">')
+        .css({
+          top: e.clientY,
+          left: e.clientX,
+        })
+        .appendTo($(document.body))
+        .on('animationend webkitAnimationEnd', function () {
+          $(this).remove();
+        });
+    };
+
+    // Добавление обработчика события клика
+    $(document).on('click', handleClick);
+
+    // Очистка обработчика при размонтировании компонента
+    return () => {
+      $(document).off('click', handleClick);
+    };
+  }, []);
+
+  const [clickNum, setclickNum] = useState<boolean>(false);
 
   function OpenPopupLogo() {
-    console.log(clickNum)
-    setclickNum((clickNum) => !clickNum)
+    setclickNum((clickNum) => !clickNum);
 
     if (clickNum === true) {
       $('.site-header').css('background', '#f6f6f6');
@@ -32,17 +48,19 @@ const Header = () => {
       $('body').css('display', 'hidden');
 
     }
-  }
+  };
 
 
-  function TopBtnClick() {
+  const TopBtnClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  const ScrollBtnOpacity = React.useCallback(() => {
-    const topBtn = document.querySelector('.top-btn')
-    topBtn.style.opacity = window.scrollY > 500 ? 1 : 0;
-  }, [])
+  const ScrollBtnOpacity = useCallback(() => {
+    const topBtn = document.querySelector('.top-btn') as HTMLElement;
+    if (topBtn) {
+      topBtn.style.opacity = window.scrollY > 500 ? '1' : '0';
+    }
+  }, []);
 
   window.onscroll = function () {
     ScrollBtnOpacity()
@@ -51,7 +69,6 @@ const Header = () => {
 
   return (
     <>
-      <link href={scssBase} rel="stylesheet" type="text/css" />
 
       <div className="sticky-top site-header">
         <nav className=" navbar navbar-expand-lg">
@@ -104,10 +121,7 @@ const Header = () => {
 
             <span className="nav-item ">
               <a href="mailto:disp2010@etalonts.ru?subject=Письмо с сайта&body=Здравствуйте!" className="contacts__item-text  navbar-collapse-item navbar-collapse-item_mail">
-              {/* src={clickNum ? logoWhite : logo} */}
-                
                 <i style={clickNum ? { float: "left", color: '#fff'} : { float: "left", color: '#30f'}} className="gg-mail" />
-                {/* <i style={{ float: "left", color:  }} className="gg-mail" /> */}
               </a>
               <a
                 href="tel:+79821832640"
@@ -121,7 +135,6 @@ const Header = () => {
               >
                 <div
                   className="navbar-toggler first-button header__burger"
-                  type="button"
                   data-mdb-toggle="collapse"
                   data-mdb-target="#navbarToggleExternalContent9"
                   aria-controls="navbarToggleExternalContent9"
@@ -220,4 +233,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

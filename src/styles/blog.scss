@@ -1,6 +1,30 @@
 .flickity-button{
     display: none;
 }
+
+/* Remove focus outline when the carousel or its items are clicked */
+.carousel:focus,
+.carousel .flickity-viewport:focus,
+.carousel .flickity-slider:focus,
+.carousel .flickity-prev-next-button:focus {
+  outline: none;
+}
+
+.carousel {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.carousel:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+
 .sobaka{
     line-height: 1.625rem;
     margin-left: 20px;

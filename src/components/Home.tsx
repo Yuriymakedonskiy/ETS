@@ -26,7 +26,7 @@ const Home = () => {
           content="Выполняем комплекс работ в области транспортировки, погрузки и доставки различного перечня грузов для нефтегазового сектора. Мы готовы начать работу с вами."
         />
         <meta property="og:url" content="" />
-        <meta property="og:image" content="" title="" alt="" />
+        <meta property="og:image" content="" title=""/>
         <meta
           property="twitter:title"
           content="Официальный веб-сайт ЭталонТрансСервис"
@@ -35,7 +35,7 @@ const Home = () => {
           property="twitter:description"
           content="Выполняем комплекс работ в области транспортировки, погрузки и доставки различного перечня грузов для нефтегазового сектора. Мы готовы начать работу с вами."
         />
-        <meta property="twitter:image" content="" title="" alt="" />
+        <meta property="twitter:image" content="" title="" />
 
       </Helmet>
 

@@ -1,33 +1,38 @@
-import React, { useState } from 'react'
-import $ from 'jquery';
+import React, { useState, FormEvent  } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
-import scssAdmin from '../styles/admin.scss'
+import '../styles/admin.scss'
 import etsText from './../images/admin/etsText.png'
 
+
+interface ApiResponse {
+  token: string;
+}
 const AdminDB = () => {
-  const [token, setToken] = useState(localStorage.getItem('token'));
-  const handleLogin = (token) => {
+  const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<string>('');
+  const navigate = useNavigate();
+  
+  const handleLogin = (token: string) => {
     setToken(token);
 };
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/getUsers', { username, password });
+      const response = await axios.post<ApiResponse>('/api/getUsers', { username, password });
       const { token } = response.data;
       console.log(response.data)
 
       localStorage.setItem('token', token);
       handleLogin(token);
-      openCompass()
+      openCompass();
       navigate('/');
 
     } catch (err) {
@@ -37,7 +42,7 @@ const AdminDB = () => {
 
   const openCompass = () => {
     const mongoUri = encodeURIComponent('mongodb+srv://vercel-admin-user-66cb7e3b06da0270f9fa6cf3:28zm0CHRS29H2ymz@etalontrans.2324u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
-    const newWindow = window.open(`mongodb+srv://vercel-admin-user-66cb7e3b06da0270f9fa6cf3:28zm0CHRS29H2ymz@etalontrans.2324u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, '_blank');
+    const newWindow = window.open(mongoUri, '_blank');
     // Проверяем, что новое окно открыто
     if (newWindow) {
         // Закрываем окно через 5 секунд
@@ -46,11 +51,6 @@ const AdminDB = () => {
         }, 5000);
     }    
   };
-
-  setTimeout(scrollBar, 1400)
-  function scrollBar() {
-    $('body').css('overflow-y', 'auto');
-  }
   
 
   return (
@@ -66,14 +66,13 @@ const AdminDB = () => {
     <meta property="og:description"
       content="Вход в MongoDB"/>
     <meta property="og:url" content=""/>
-    <meta property="og:image" content="" title="" alt=""/>
+    <meta property="og:image" content="" title=""/>
     <meta property="twitter:title" content="Вход в MongoDB"/>
     <meta property="twitter:description"
     content="Вход в MongoDB"/>
-    <meta property="twitter:image" content="" title="" alt=""/>
+    <meta property="twitter:image" content="" title="" />
 
   </Helmet>
-      <link href={scssAdmin} rel="stylesheet" type="text/css" />
 
     <div className='popup__login'>
       <div className="popup__container__login">
@@ -108,4 +107,4 @@ const AdminDB = () => {
   )
 }
 
-export default AdminDB
+export default AdminDB;

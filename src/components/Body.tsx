@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useEffect } from 'react';
 import PopupLogo from './UI/popup/PopupLogo'
 import { Toast } from 'bootstrap'
 import CountUp from 'react-countup';
@@ -21,7 +21,6 @@ import rn_yugan from '../images/glavnaya/rn_yugan2.png'
 import mekamineft from '../images/glavnaya/mekamineft1.png'
 import svetEnergy from '../images/glavnaya/svetEnergy1.png'
 import calfrac from '../images/glavnaya/calfrac1.png'
-import departaments from '../images/glavnaya/Департаменты.webp'
 import briefing from '../images/glavnaya/STA04049.webp'
 import briefing2 from '../images/glavnaya/STA04059.webp'
 import briefing3 from '../images/glavnaya/STA04055.webp'
@@ -42,16 +41,33 @@ import discount from '../images/glavnaya/discount.svg'
 import handshake from '../images/glavnaya/handshake.svg'
 
 // SCSS
-import scss from '../styles/bodyGlavnaya.scss'
+import '../styles/bodyGlavnaya.scss'
 import axios from 'axios';
 import PopupSiberia from './UI/popup/PopupSiberia';
 
+interface Service {
+    _id: number;
+    id: number;
+    title: string;  
+}
 
+
+interface Vacancy {
+    _id: string;
+    title: string;
+    workExperience: string;
+    salary: string;
+    requirements: string;
+    responsibilities: string;
+    conditions: string;
+  }
+  
+  
 const Body = () => {
-    const [services, setServices] = useState([]);
-    const [vacancies, setVacancies] = useState([]);
+    const [services, setServices] = useState<Service[]>([]);
+    const [vacancies, setVacancies] = useState<Vacancy[]>([]);
 
-    React.useEffect(() => {
+    useEffect(() => {
       const fetchServices = async () => {
         try {
           const response = await axios.get('/api/getServices');
@@ -77,16 +93,18 @@ const Body = () => {
  
   
 
-    const numberCopyCall = React.useCallback(() => {
+    const numberCopyCall = useCallback(() => {
         navigator.clipboard.writeText('+79224054081');
-        var toastLiveExample = document.getElementById('liveToast')
-        var toast = new Toast(toastLiveExample)
-        toast.show()
-    }, [])
+        const toastLiveExample = document.getElementById('liveToast');
+        if (toastLiveExample) {
+            const toast = new Toast(toastLiveExample);
+            toast.show();
+        }
+    }, []);
 
-    let [yandexCartText, setYandexCartText] = useState('Найти на карте')
+    let [yandexCartText, setYandexCartText] = useState<string>('Найти на карте');
 
-    const YandexCart = React.useCallback(() => {
+    const YandexCart = useCallback(() => {
         if (yandexCartText !== 'Свернуть') {
             setYandexCartText('Свернуть');
             $('.cart').css('display', 'block');
@@ -98,26 +116,29 @@ const Body = () => {
     }, [yandexCartText])
 
 
-
-    React.useEffect(() => {
-        let ticker = document.getElementById('ticker')
-        let list = ticker.querySelector(".ticker__list");
-        let clone = list.cloneNode(true);
-        ticker.appendChild(clone);
-
-    }, [])
-    React.useEffect(() => {
-        let ticker2 = document.getElementById('ticker2')
-        let list2 = ticker2.querySelector(".ticker__list2");
-        let clone = list2.cloneNode(true);
-        ticker2.appendChild(clone);
-
-    }, [])
+    useEffect(() => {
+        const ticker = document.getElementById('ticker');
+        if (ticker) {
+          const list = ticker.querySelector('.ticker__list');
+          if (list) {
+            const clone = list.cloneNode(true);
+            ticker.appendChild(clone);
+          }
+        }
+      }, []);
+      useEffect(() => {
+        const ticker2 = document.getElementById('ticker2');
+        if (ticker2) {
+          const list2 = ticker2.querySelector('.ticker__list2');
+          if (list2) {
+            const clone = list2.cloneNode(true);
+            ticker2.appendChild(clone);
+          }
+        }
+      }, []);
 
     return (
-        <>
-        
-            <link href={scss} rel="stylesheet" type="text/css" />
+        <>        
  <div className="container-fluid plast__two" style={{ marginTop: 100 }}>
                 <div className="row">
                     <div className="col-12 col-md-9 offset-0 offset-lg-1">
@@ -318,12 +339,12 @@ const Body = () => {
                         <br />
                         <div className="row">
                         {services.map((service, id) => (
-                            <div class="col offset-0">
+                            <div className="col offset-0">
 
                                 <a href={`mailto:disp2010@etalonts.ru?subject=Интерес к услуге '${service.title}' &body=Здравствуйте! Меня заинтересовла услуга '${service.title}'. Расскажите пожалуйста подробнее о условиях и деталях`}
                                 // target="_blank"
                                 >
-                                    <h2 style={{marginTop:'-10px'}} class="vacancy-card__title"><span class="numbers-big-blue">{id+1}.
+                                    <h2 style={{marginTop:'-10px'}} className="vacancy-card__title"><span className="numbers-big-blue">{id+1}.
 
                                     </span>
                                         <br />
@@ -788,57 +809,57 @@ const Body = () => {
                             программы производственной безопасности
                         </p>
 
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item" style={{border:'none'}}>
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed vacancy-card__button button button_background__blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <div className="accordion" id="accordionExample">
+                            <div className="accordion-item" style={{border:'none'}}>
+                                <h2 className="accordion-header" id="headingOne">
+                                    <button className="accordion-button collapsed vacancy-card__button button button_background__blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                         Безопасные условия труда
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div style={{backgroundColor:'#f6f6f6'}} class="accordion-body vacancy-card__text vacancy-card__text_description">
+                                <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div style={{backgroundColor:'#f6f6f6'}} className="accordion-body vacancy-card__text vacancy-card__text_description">
                                         Обеспечение соблюдения производственных процессов и условий
                                         труда сотрудников
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item" style={{border:'none'}}>
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed vacancy-card__button button button_background__blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div className="accordion-item" style={{border:'none'}}>
+                                <h2 className="accordion-header" id="headingTwo">
+                                    <button className="accordion-button collapsed vacancy-card__button button button_background__blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         Безопасность на транспорте
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div style={{backgroundColor:'#f6f6f6'}} class="accordion-body vacancy-card__text vacancy-card__text_description">
+                                <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div style={{backgroundColor:'#f6f6f6'}} className="accordion-body vacancy-card__text vacancy-card__text_description">
                                         Обеспечение соблюдения производственных Наличие
                                         сертифицированного инструктора по БДД в штате предприятия{" "}
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item" style={{border:'none'}}>
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed vacancy-card__button button button_background__blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <div className="accordion-item" style={{border:'none'}}>
+                                <h2 className="accordion-header" id="headingThree">
+                                    <button className="accordion-button collapsed vacancy-card__button button button_background__blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         Обучение сотрудников
 
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div style={{backgroundColor:'#f6f6f6'}} class="accordion-body vacancy-card__text vacancy-card__text_description">
+                                <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div style={{backgroundColor:'#f6f6f6'}} className="accordion-body vacancy-card__text vacancy-card__text_description">
                                         Семинары и мастер-классы с персоналом по программе защитного
                                         зимнего вождения у провайдеров ПАО «Газпром»
 
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item" style={{border:'none'}}>
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed vacancy-card__button button button_background__blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <div className="accordion-item" style={{border:'none'}}>
+                                <h2 className="accordion-header" id="headingFour">
+                                    <button className="accordion-button collapsed vacancy-card__button button button_background__blue" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                         Аудит безопасности
 
                                     </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                    <div style={{backgroundColor:'#f6f6f6'}} class="accordion-body vacancy-card__text vacancy-card__text_description">
+                                <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div style={{backgroundColor:'#f6f6f6'}} className="accordion-body vacancy-card__text vacancy-card__text_description">
                                         Контроль манеры езды, мониторинг скоростного режима и
                                         утомляемости сотрудников
 
@@ -867,7 +888,6 @@ const Body = () => {
                                 onClick={numberCopyCall}
                                 id="liveToastBtn"
                                 data-toggle="tooltip"
-                                title={79224054081}
                                 href="tel:+79224054081"
                                 style={{ textDecoration: "none" }}
                             >

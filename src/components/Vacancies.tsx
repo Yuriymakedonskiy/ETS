@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import $ from 'jquery';
 import Header from './Header';
 import Footer from './Footer';
-import scss from '../styles/vacancies.scss'
+import '../styles/vacancies.scss'
 import axios from 'axios';
 import PopupLogo from './UI/popup/PopupLogo'
 import { Helmet } from 'react-helmet-async';
 
+interface Vacancy {
+  _id: string;
+  title: string;
+  workExperience: string;
+  salary: string;
+  requirements: string;
+  responsibilities: string;
+  conditions: string;
+}
+
 const Vacancies = () => {
-  const [vacancies, setVacancies] = useState([]);
+  const [vacancies, setVacancies] = useState<Vacancy[]>([]);
 
   useEffect(() => {
     const fetchVacancies = async () => {
@@ -22,15 +31,8 @@ const Vacancies = () => {
     fetchVacancies();
   }, []);
  
-  setTimeout(scrollBar, 10)
-  function scrollBar() {
-    $('body').css('overflow-y', 'auto');
-  }
-
   return (
     <>
-      <link href={scss} rel="stylesheet" type="text/css" />
-
       <Helmet>
         <title>ЭталонТрансСервис — есть открытые вакансии</title>
         <meta name="robots" content="index-follow" />
@@ -52,7 +54,7 @@ const Vacancies = () => {
           content="Мы всегда в поиске талантливых людей. Посмотрите условия, возможно мы подходим друг другу. Мы не берем людей без опыта, можем только повысить разряд, отправив на очное обучение."
         />
         <meta property="og:url" content="" />
-        <meta property="og:image" content="" title="" alt="" />
+        <meta property="og:image" content="" title="" />
         <meta
           property="twitter:title"
           content="ЭталонТрансСервис — есть открытые вакансии"
@@ -61,7 +63,7 @@ const Vacancies = () => {
           property="twitter:description"
           content="Мы всегда в поиске талантливых людей. Посмотрите условия, возможно мы подходим друг другу. Мы не берем людей без опыта, можем только повысить разряд, отправив на очное обучение"
         />
-        <meta property="twitter:image" content="" title="" alt="" />
+        <meta property="twitter:image" content="" title="" />
       </Helmet>
 
       <Header />

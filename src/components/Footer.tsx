@@ -1,11 +1,9 @@
 import React from 'react'
-import scss from '../styles/styles.scss'
+import '../styles/styles.scss'
 
 const Footer = () => {
   return (
     <>
-      <link src={scss} rel="stylesheet" href="style.css" />
-
       <footer role="contentinfo" className="container footer layout__footer">
         <div className="row">
           <div className="col">

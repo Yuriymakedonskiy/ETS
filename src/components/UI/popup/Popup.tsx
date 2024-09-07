@@ -1,7 +1,9 @@
 import React from 'react'
-import { BrowserRouter as Link } from 'react-router-dom';
-
-const Popup = ({clickNum}) => {
+import { Link } from 'react-router-dom';
+interface PopupProps {
+  clickNum: boolean;
+}
+const Popup = ({ clickNum }: PopupProps) => {
   return (
     <>
     <div className={clickNum ? 'popup' : 'popup visible'}>
@@ -38,4 +40,4 @@ const Popup = ({clickNum}) => {
   )
 }
 
-export default Popup
+export default Popup;

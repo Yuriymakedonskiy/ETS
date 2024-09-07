@@ -1,13 +1,7 @@
 import React from 'react'
 import PopLogo from '../../../images/glavnaya/ЭТС-вертикальный.png'
-import $ from 'jquery';
 
 const PopupLogo = () => {
-    setTimeout(scrollBar, 1400)
-    function scrollBar() {
-      $('body').css('overflow-y', 'auto');
-    }
-
   
   return (
     <div className="popup__logo">
@@ -23,4 +17,4 @@ const PopupLogo = () => {
   )
 }
 
-export default PopupLogo
+export default PopupLogo;
