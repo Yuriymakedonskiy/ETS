@@ -1,23 +1,31 @@
 {
   "compilerOptions": {
+    "target": "ES5",
+    "lib": [
+      "DOM",
+      "ES6",
+      "DOM.Iterable"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "commonjs", // or "ES6", depending on your preference
+    "module": "ES6",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "noEmit": true
-    // "paths": {
-    //   "*": ["./types/*"]
-    // }
+    "noEmit": true,
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
     "node_modules",
-    "build"
+    "build",
+    "dist",
+    "public"
   ]
 }
