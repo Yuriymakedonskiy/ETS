@@ -7,7 +7,11 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
+<<<<<<< HEAD
 const port = 5000;
+=======
+const port = 9000;
+>>>>>>> 0508475 (Обновление проекта: новые файлы и настройки Webpack)
 const secretKey = process.env.DATA_API_KEY!;
 
 mongoose.set('strictQuery', true);
