@@ -14,7 +14,7 @@ export default defineConfig({
   },
   root: 'public', // Specify public folder as root for Vite
   build: {
-    outDir: '../build', // Output directory for build files
+    outDir: '../dist', // Output directory for build files
     assetsDir: 'assets', 
     sourcemap: true, 
     rollupOptions: {
