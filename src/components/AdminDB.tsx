@@ -41,7 +41,7 @@ const AdminDB = () => {
   };
 
   const openCompass = () => {
-    const mongoUri = encodeURIComponent('mongodb+srv://vercel-admin-user-66cb7e3b06da0270f9fa6cf3:28zm0CHRS29H2ymz@etalontrans.2324u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+    const mongoUri = encodeURIComponent('mongodb+srv://vercel-admin-user-6720ccd42f78132403ae00f2:ZB9dVViZlnCFQ1H9@etalontrans.2324u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
     const newWindow = window.open(mongoUri, '_blank');
     // Проверяем, что новое окно открыто
     if (newWindow) {

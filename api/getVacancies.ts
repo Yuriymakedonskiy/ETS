@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { MongoClient } from 'mongodb';
 // Middleware/handler function for Express
 export default async function handler(req: Request, res: Response) {
-    const client = new MongoClient(process.env.VITE_MONGODB_URI as string);
+    const client = new MongoClient(process.env.MONGODB_URI as string);
 
     try {
         await client.connect();

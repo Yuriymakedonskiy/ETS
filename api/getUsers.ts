@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 const secretKey = process.env.DATA_API_KEY as string;
 
 export default async function handler(req: Request, res: Response) {
-    const client = new MongoClient(process.env.VITE_MONGODB_URI as string);
+    const client = new MongoClient(process.env.MONGODB_URI as string);
     
     try {
         await client.connect();
