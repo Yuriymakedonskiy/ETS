@@ -8,13 +8,13 @@ dotenv.config();
 
 const app = express();
 const port = 5000;
-const secretKey = process.env.DATA_API_KEY!;
+const secretKey = process.env.VITE_DATA_API_KEY!;
 
 mongoose.set('strictQuery', true);
 app.use(cors());
 app.use(express.json());
 
-const mongoURL = process.env.MONGODB_URI!;
+const mongoURL = process.env.VITE_MONGODB_URI!;
 
 mongoose.connect(mongoURL)
     .then(() => console.log('Connected to MongoDB Atlas'))

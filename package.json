@@ -12,6 +12,7 @@
     "@types/node": "^22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.3",
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
@@ -33,12 +34,23 @@
     "sass": "^1.77.8",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/bcrypt": "^5.0.2",
+    "@types/bootstrap": "^5.2.10",
+    "@types/dateformat": "^5.0.2",
+    "@types/jquery": "^3.5.30",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@typescript-eslint/parser": "^5.62.0",
+    "typescript": "^4.9.5",
+    "vite": "^5.4.10",
+    "vite-tsconfig-paths": "^5.0.1"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "dev": "react-scripts dev",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build --base=./",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "eslintConfig": {
     "extends": [
@@ -57,16 +69,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/bcrypt": "^5.0.2",
-    "@types/bootstrap": "^5.2.10",
-    "@types/dateformat": "^5.0.2",
-    "@types/jquery": "^3.5.30",
-    "@types/jsonwebtoken": "^9.0.6",
-    "@typescript-eslint/parser": "^5.62.0",
-    "react-scripts": "^5.0.1",
-    "typescript": "^4.9.5"
   }
 }
